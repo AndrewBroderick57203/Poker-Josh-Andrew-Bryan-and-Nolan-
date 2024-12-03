@@ -1,23 +1,36 @@
 package BlackJack;
 
+import java.util.*;
+
+
 public class BlackJack {
+	private String PrintDaCards(int[] cards) 
+	{
+		String cardsString = "";
+		for()
+		return "clubs (♣), diamonds (♦), hearts (♥), and spades (♠)";
+	}
 	public static void main(String[] args)
 	{
-		//initiate scanner
+		Scanner usrinput = new Scanner(System.in);
 		//create new Deck
 		//create new Player
+		Player MyGuy = new Player();
 		//create new Dealer
-
-		// Initial dealing
-		//add 2 cards to player
-		//add 2 cards to dealer
-
-		// Player's turn
+		Player TheBigDeal = new Player();
+		/* Initial dealing
+		MyGuy.addCard(CARD);
+		MyGuy.addCard(CARD);
+		TheBigDeal.addCard(CARD);
+		TheBigDeal.addCard(CARD);
+		*/
+		boolean playing = true;
 		boolean playerBust = false;
-		//while (true) 
-		//{
-		//show player’s hand
-		//print player score
+		while (playing) 
+		{
+		}
+			System.out.println(MyGuy.showHand());
+			System.out.println(MyGuy.getScore());
 
 		/*if (player score > 21) 
 		{

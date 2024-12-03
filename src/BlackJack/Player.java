@@ -5,6 +5,14 @@ import java.util.ArrayList;
 public class Player {
 	//cards array for the player
 	private ArrayList<Integer> cards = new ArrayList<Integer>();
+	
+	/**Defines player with a blank hand
+	 */
+	public Player() 
+	{
+		
+	}// End Player
+	
 	/**Defines player
 	 * @param cards The players cards
 	 */
