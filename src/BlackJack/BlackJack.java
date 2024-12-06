@@ -47,7 +47,7 @@ public class BlackJack {
 			}
 		}
 		return cardsString;
-	}
+	}// End PrintDaCards()
 	public static void main(String[] args)
 	{
 		Scanner usrinput = new Scanner(System.in);
@@ -56,54 +56,57 @@ public class BlackJack {
 		Player MyGuy = new Player();
 		//create new Dealer
 		Player TheBigDeal = new Player();
-		/* Initial dealing
-		MyGuy.addCard(CARD);
-		MyGuy.addCard(CARD);
-		TheBigDeal.addCard(CARD);
-		TheBigDeal.addCard(CARD);
-		*/
+		//Initial dealing
+		MyGuy.addCard(0);
+		MyGuy.addCard(0);
+		TheBigDeal.addCard(0);
+		TheBigDeal.addCard(0);
+		
 		boolean playing = true;
-		boolean playerBust = false;
 		while (playing) 
-			System.out.println(MyGuy.showHand());
-			System.out.println(MyGuy.getScore());
-
-		/*if (player score > 21) 
-		{
-			print “You win!”
-			playerBust = true
-			break
-		}*/
-
-		/*print "Do you want to (h)it or (s)tand? "
-		String choice = scanner.nextLine()
-		if (choice = “h”) 
-		{
-			add card to player from deck;
-		} else 
-		{
-			break
-		}*/
-		//}
-
-		// Dealer's turn
-		/*if (player haven’t bust) 
-		{
-			while (dealer score < 17) 
+		{ 
+			boolean GameRun = true;
+			while(GameRun) 
 			{
-				add card to dealer
+				//Player's turn
+				System.out.println("YOUR TURN!");
+				System.out.println(MyGuy.showHand());
+				System.out.println(MyGuy.getScore());
+
+				if (MyGuy.getScore() > 21) 
+				{
+					System.out.println("You lose!");
+					GameRun = false;
+					break;
+				}
+		
+				System.out.println("Do you want to (h)it or (s)tand?");
+				String choice = usrinput.nextLine();
+				if (choice.equals("h")) 
+				{
+					MyGuy.addCard(0);
+				} 
+				// Dealer's turn
+				System.out.println("THE BIG DEAL'S TURN");
+				System.out.println(TheBigDeal.showHand());
+				System.out.println(TheBigDeal.getScore());
+
+				if (TheBigDeal.getScore() > 21) 
+				{
+					System.out.println("You win!");
+					GameRun = false;
+					break;
+				}
+				if (TheBigDeal.getScore()<15)
+				{
+					TheBigDeal.addCard(0);
+				} 
 			}
-
-			// Show results
-			show dealer hand
-			print dealer score
-
-			// Determine winner
-			if (dealer score > 21) 
+			System.out.println("Do you want to play again? (y/n)");
+			if(usrinput.nextLine().equals("n")) 
 			{
-				print “Dealer bust! You win!”
+				playing = false;
 			}
-		}*/
-
+		}
 	}
-}
+}// End BlackJack
