@@ -57,7 +57,7 @@ public class Player {
 			//Number Card
 			else
 			{
-				score+=i%13+1;
+				score+=i%13;
 			}
 		}
 		//Ace Handling as they have 2 possible values and thus must be dealt with last
